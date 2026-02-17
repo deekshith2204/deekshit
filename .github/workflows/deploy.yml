@@ -22,7 +22,7 @@ jobs:
 
     - name: Build Docker Image
       run: |
-        docker build -t ${{ secrets.DOCKER_USERNAME }}/calculator-app:latest .
+        docker build -t ${{ secrets.DOCKER_USERNAME }}/calculator-app:latest ./calculator-app
 
     - name: Push Docker Image
       run: |
