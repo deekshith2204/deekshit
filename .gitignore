@@ -1,0 +1,5 @@
+infrastructure_setup/.terraform/
+*.tfstate
+*.tfstate.backup
+*.tfvars # Remove the folder from Git tracking
+git rm -r --cached .terraform

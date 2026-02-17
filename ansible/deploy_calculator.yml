@@ -1,0 +1,35 @@
+- name: Deploy Calculator App Container
+  hosts: web
+  gather_facts: no
+  become: false
+  vars:
+    ansible_ssh_common_args: '-o StrictHostKeyChecking=no'
+
+  tasks:
+
+    - name: Ensure git is installed
+      ansible.builtin.yum:
+        name: git
+        state: present
+
+    - name: Clone calculator app repository
+      ansible.builtin.git:
+        repo: https://github.com/deekshith2204/calculator-app.git
+        dest: /home/ec2-user/calculator-app
+        force: yes
+
+    - name: Build Docker image
+      community.docker.docker_image:
+        name: calculator-app
+        source: build
+        build:
+          path: /home/ec2-user/calculator-app
+
+    - name: Run Docker container
+      community.docker.docker_container:
+        name: calculator
+        image: calculator-app
+        state: started
+        restart_policy: always
+        ports:
+          - "80:80"
