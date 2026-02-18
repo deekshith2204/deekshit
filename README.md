@@ -1,4 +1,5 @@
 -----------Project Overview--------------
+
 The project demonstrates a complete DevOps workflow:
 
 1.Build a static calculator web app using HTML + JavaScript.
@@ -9,6 +10,7 @@ The project demonstrates a complete DevOps workflow:
 When the code is pushed to the main branch, the app is automatically built, pushed, and deployed.
 
 -----------Architecture Overview------------
+
 <img width="1024" height="512" alt="ChatGPT Image Feb 18, 2026, 10_04_36 PM" src="https://github.com/user-attachments/assets/5bad57b4-1c70-4eb0-b476-c7f4e92c26b1" />
 
 ------------Docker Configuration-------------
