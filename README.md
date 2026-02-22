@@ -22,6 +22,7 @@ When the code is pushed to the main branch, the app is automatically built, push
 
 The application runs inside an Nginx container.
 Dockerfile:
+
 1.Uses nginx:alpine image
 
 2.Removes default nginx files
